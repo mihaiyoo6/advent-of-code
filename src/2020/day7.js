@@ -57,6 +57,7 @@ const countPosibilities = (dictionary, bagName) => {
       parrents = [...new Set([...parrents, dicKey])];
     }
   });
+  // sa sugi o ceapa
   parrents.forEach((parrent) => {
     dicKeys.forEach((dicKey) => {
       if (dictionary[dicKey][parrent]) {
