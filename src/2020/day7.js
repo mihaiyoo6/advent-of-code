@@ -13,8 +13,8 @@ const main = async () => {
     "dotted black bags contain no other bags."
   ];
   return {
-    day7a: runA(data.split("\n").filter((item) => item))
-    //  day7b: runB(data.split("\n"))
+    day7a: runA(data.split("\n").filter((item) => item)),
+    day7b: runB(data.split("\n").filter((item) => item))
   };
 };
 
@@ -69,7 +69,17 @@ const runA = (data) => {
   const dictionary = getContentDictionary(data);
   return countPosibilities(dictionary, "shiny gold");
 };
-const runB = (data) => data;
+const runB = (data) => {
+  const bagGraph = getContentDictionary(data);
+  const countInnerBags = (bag) =>
+    Object.entries(bagGraph[bag] || []).reduce(
+      (count, [innerBag, quantity]) =>
+        // for each child bag, add the quantity multiplied by its contents
+        count + quantity * countInnerBags(innerBag),
+      1 // the count starts at 1 to include the current bag
+    );
+  return countInnerBags("shiny gold") - 1;
+};
 
 main().then((r) => console.log(JSON.stringify(r, null, 2)));
 module.exports = main;
