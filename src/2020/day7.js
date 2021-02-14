@@ -52,19 +52,16 @@ const getContentDictionary = (data) => {
 const countPosibilities = (dictionary, bagName) => {
   const dicKeys = Object.keys(dictionary);
   let parrents = [];
-  dicKeys.forEach((dicKey) => {
-    if (dictionary[dicKey][bagName]) {
-      parrents = [...new Set([...parrents, dicKey])];
-    }
-  });
-  // sa sugi o ceapa
-  parrents.forEach((parrent) => {
+  const find = (name) => {
     dicKeys.forEach((dicKey) => {
-      if (dictionary[dicKey][parrent]) {
+      if (dictionary[dicKey][name]) {
         parrents = [...new Set([...parrents, dicKey])];
+        find(dicKey);
       }
     });
-  });
+  };
+  find(bagName);
+
   return parrents.length;
 };
 
