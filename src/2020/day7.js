@@ -57,7 +57,6 @@ const countPosibilities = (dictionary, bagName) => {
       parrents = [...new Set([...parrents, dicKey])];
     }
   });
-  console.log(parrents);
   parrents.forEach((parrent) => {
     dicKeys.forEach((dicKey) => {
       if (dictionary[dicKey][parrent]) {
@@ -65,7 +64,6 @@ const countPosibilities = (dictionary, bagName) => {
       }
     });
   });
-  console.log(parrents);
   return parrents.length;
 };
 
