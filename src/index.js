@@ -6,6 +6,7 @@ const day4 = require("./2020/day4");
 const day5 = require("./2020/day5");
 const day6 = require("./2020/day6");
 const day7 = require("./2020/day7");
+const day8 = require("./2020/day8");
 
 //create a server object:
 http
@@ -17,6 +18,7 @@ http
     const day5r = await day5();
     const day6r = await day6();
     const day7r = await day7();
+    const day8r = await day8();
     const result = [
       { title: "2020-day1", result: day1r },
       { title: "2020-day2", result: day2r },
@@ -24,7 +26,8 @@ http
       { title: "2020-day4", result: day4r },
       { title: "2020-day5", result: day5r },
       { title: "2020-day6", result: day6r },
-      { title: "2020-day7", result: day7r }
+      { title: "2020-day7", result: day7r },
+      { title: "2020-day8", result: day8r }
     ];
     res.write(
       `<h1>Advent of Code</h1>
