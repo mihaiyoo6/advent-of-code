@@ -14,10 +14,10 @@ const day10 = require("./2020/day10");
 http
   .createServer(async function (req, res) {
     const result = [
-      { title: "2020-day1", result: await day01() },
-      { title: "2020-day2", result: await day02() },
-      { title: "2020-day3", result: await day03() },
-      { title: "2020-day4", result: await day04() },
+      { title: "2020-day01", result: await day01() },
+      { title: "2020-day02", result: await day02() },
+      { title: "2020-day03", result: await day03() },
+      { title: "2020-day04", result: await day04() },
       { title: "2020-day05", result: await day05() },
       { title: "2020-day06", result: await day06() },
       { title: "2020-day07", result: await day07() },
