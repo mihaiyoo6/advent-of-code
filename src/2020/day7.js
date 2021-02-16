@@ -81,5 +81,5 @@ const runB = (data) => {
   return countInnerBags("shiny gold") - 1;
 };
 
-main().then((r) => console.log(JSON.stringify(r, null, 2)));
+// main().then((r) => console.log(JSON.stringify(r, null, 2)));
 module.exports = main;

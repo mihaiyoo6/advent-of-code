@@ -119,5 +119,5 @@ const runB = (data) => {
   }
   return Math.max(...canditates);
 };
-main().then((r) => console.log(JSON.stringify(r, null, 2)));
+// main().then((r) => console.log(JSON.stringify(r, null, 2)));
 module.exports = main;
